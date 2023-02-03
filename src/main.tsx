@@ -7,4 +7,4 @@ import App from './App';
 
 // root.render(<App />);
 
-hydrateRoot(document.querySelector('#root'),<App />);
+hydrateRoot(document.querySelector('#root') as any,<App />);

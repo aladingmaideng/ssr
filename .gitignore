@@ -10,3 +10,5 @@ npm-debug.log*
 dist
 
 webpack-assets.json
+
+package-lock.json
