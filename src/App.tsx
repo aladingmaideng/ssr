@@ -2,9 +2,8 @@ import { useState, Suspense, lazy } from 'react';
 import Style from './styles/App';
 import A from '@/components/A';
 import B from '@/components/B';
-import antd, { DatePicker, Button } from 'antd';
+import { DatePicker, Button } from 'antd';
 import { Helmet } from 'react-helmet';
-console.log(antd);
 
 // const A = lazy(() => import('./components/A'))
 const App = () => {
