@@ -3,8 +3,9 @@ import { createRoot, hydrateRoot } from "react-dom/client";
 
 import App from './App';
 
-// const root = createRoot(document.querySelector('#root'));
-
-// root.render(<App />);
-
-hydrateRoot(document.querySelector('#root') as any,<App />);
+if (process.env.NODE_ENV == 'development') {
+    const root = createRoot(document.querySelector('#root') as any);
+    root.render(<App />);
+} else {
+    hydrateRoot(document.querySelector('#root') as any, <App />);
+}

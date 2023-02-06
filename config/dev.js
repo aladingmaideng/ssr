@@ -2,13 +2,21 @@ const path = require("path");
 const HtmlPlugin = require("html-webpack-plugin");
 const base = require("./base");
 const { merge } = require("webpack-merge");
-const AssetsPlugin = require("assets-webpack-plugin");
 
 module.exports = merge(base, {
+  mode: "development",
   entry: "./src/main.tsx",
   externals: {
     react: "React",
     "react-dom": "ReactDOM",
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
   },
   output: {
     clean: true,
@@ -16,16 +24,12 @@ module.exports = merge(base, {
     publicPath: "/",
   },
   plugins: [
-    new AssetsPlugin({
-      entrypoints: true,
-      integrity: true,
-      prettyPrint: true,
-      includeFilesWithoutChunk: true,
-      includeAuxiliaryAssets: true,
-      includeDynamicImportedAssets: true,
+    new HtmlPlugin({
+      template: "./public/index.html",
     }),
-    // new HtmlPlugin({
-    //   template: "./public/index.html",
-    // }),
   ],
+  devServer: {
+    historyApiFallback: true,
+    hot: true,
+  },
 });

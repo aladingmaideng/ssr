@@ -1,5 +1,5 @@
 const path = require("path");
-
+const webpack = require("webpack");
 module.exports = {
   resolve: {
     extensions: [".tsx", ".jsx", ".ts", ".js"],
@@ -24,4 +24,9 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      NODE_ENV: process.env.NODE_ENV,
+    }),
+  ],
 };
