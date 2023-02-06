@@ -1,10 +1,10 @@
-const path = require("path");
-const webpack = require("webpack");
+const path = require('path');
+const webpack = require('webpack');
 module.exports = {
   resolve: {
-    extensions: [".tsx", ".jsx", ".ts", ".js"],
+    extensions: ['.tsx', '.jsx', '.ts', '.js'],
     alias: {
-      "@": path.resolve("src"),
+      '@': path.resolve('src'),
     },
   },
   module: {
@@ -12,12 +12,12 @@ module.exports = {
       {
         test: /\.(js|ts|tsx|jsx)/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             presets: [
-              "@babel/preset-env",
-              ["@babel/preset-react", { runtime: "automatic" }],
-              "@babel/preset-typescript",
+              '@babel/preset-env',
+              ['@babel/preset-react', { runtime: 'automatic' }],
+              '@babel/preset-typescript',
             ],
           },
         },

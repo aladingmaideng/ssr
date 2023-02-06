@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import styled from "styled-components";
+import styled from 'styled-components';
 import CodePre from './CodePreview';
 const Style = styled.div``;
 
 let maps = {
-    'css': {
-        code: `body {
+  css: {
+    code: `body {
         color: red;
 }
 
@@ -14,10 +14,10 @@ let maps = {
     margin: 0;
     padding: 0;
 }`,
-        language: 'css',
-    },
-    'html': {
-        code: `<!DOCTYPE html>
+    language: 'css',
+  },
+  html: {
+    code: `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,30 +29,32 @@ let maps = {
     
 </body>
 </html>`,
-        language: 'html',
-    },
-    'javascript': {
-        code: `const a = 1;
+    language: 'html',
+  },
+  javascript: {
+    code: `const a = 1;
 const cc = ()=>{};
 console.log(1);`,
-        language: 'javascript',
-    },
-}
+    language: 'javascript',
+  },
+};
 
 const Demo = () => {
-    const [type, setType] = useState('javascript');
-    return (
-        <Style>
-            <ul onClick={(e: any) => {
-                setType(e.target.innerText);
-            }}>
-                <li>css</li>
-                <li>javascript</li>
-                <li>html</li>
-            </ul>
-            <CodePre {...maps[type]} />
-        </Style>
-    )
+  const [type, setType] = useState('javascript');
+  return (
+    <Style>
+      <ul
+        onClick={(e: any) => {
+          setType(e.target.innerText);
+        }}
+      >
+        <li>css</li>
+        <li>javascript</li>
+        <li>html</li>
+      </ul>
+      <CodePre {...maps[type]} />
+    </Style>
+  );
 };
 
 export default Demo;

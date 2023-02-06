@@ -12,3 +12,4 @@ dist
 webpack-assets.json
 
 package-lock.json
+.eslintcache
