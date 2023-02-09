@@ -4,11 +4,11 @@ const nodeExternals = require('webpack-node-externals');
 
 const { merge } = require('webpack-merge');
 module.exports = merge(base, {
-  mode: 'production',
-  target: 'node',
-  entry: path.resolve(__dirname, '../serve/index.js'),
-  output: {
-    filename: 'serve.js',
-  },
-  externals: nodeExternals(),
+    mode: 'production',
+    target: 'node',
+    entry: path.resolve(__dirname, '../serve/index.js'),
+    output: {
+        filename: 'serve.js'
+    },
+    externals: nodeExternals()
 });

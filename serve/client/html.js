@@ -3,8 +3,7 @@
  * 这个 Html.js 文件充当了一个模板，我们将所有生成的应用程序代码插入其中
  * 成的应用程序字符串插入进去。
  */
-const Html = ({ body, styles, head, js }) => `
-  <!DOCTYPE html>
+const Html = ({ body, styles, head, js }) => `<!DOCTYPE html>
   <html>
     <head>
       ${head}

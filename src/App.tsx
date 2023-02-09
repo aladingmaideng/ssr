@@ -1,38 +1,30 @@
-import { useState, Suspense, lazy } from 'react';
 import Style from './styles/App';
-import A from '@/components/A';
-import B from '@/components/B';
-import { DatePicker, Button } from 'antd';
+import { Button } from 'antd';
 import { Helmet } from 'react-helmet';
-
-// const A = lazy(() => import('./components/A'))
+import Route from './routes';
+import { Link } from 'react-router-dom';
 const App = () => {
-  const [show, setShow] = useState(false);
-  return (
-    <Style>
-      <Helmet>
-        <title>服务标题</title>
-        <meta name="keywords" content="关键字关键字" />
-        <meta name="description" content="描述描述"></meta>
-        <link
-          rel="shortcut icon"
-          href="//mapopen-website-wiki.cdn.bcebos.com/LOGO/lbsyunlogo_icon.ico"
-          type="image/x-icon"
-        />
-      </Helmet>
-      <DatePicker />
-      <Button>11</Button>
-      <div>父级容器</div>
-      <button
-        onClick={() => {
-          setShow(!show);
-        }}
-      >
-        取反
-      </button>
-      {show ? <A /> : <B />}
-    </Style>
-  );
+    return (
+        <Style>
+            <Helmet>
+                <title>服务标题</title>
+                <meta name="keywords" content="关键字关键字" />
+                <meta name="description" content="描述描述"></meta>
+                <link
+                    rel="shortcut icon"
+                    href="//mapopen-website-wiki.cdn.bcebos.com/LOGO/lbsyunlogo_icon.ico"
+                    type="image/x-icon"
+                />
+            </Helmet>
+            <Link to={'/A'}>
+                <Button>A页面</Button>
+            </Link>
+            <Link to={'/B'}>
+                <Button>B页面</Button>
+            </Link>
+            <Route />
+        </Style>
+    );
 };
 
 export default App;
